@@ -1,4 +1,4 @@
-package gof.Exp;
+package gof.exp;
 
 public class VariableExp extends BooleanExp{
 	protected String variableName;
@@ -10,5 +10,8 @@ public class VariableExp extends BooleanExp{
 	}
 	public BooleanExp Copy() {
 		return new VariableExp(this.variableName);
+	}
+	public String GetVariableName() {
+		return this.variableName;
 	}
 }

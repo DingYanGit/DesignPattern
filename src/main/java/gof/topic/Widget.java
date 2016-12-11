@@ -1,7 +1,7 @@
 package gof.topic;
 
 public class Widget extends HelpHandler{
-	public Widget(Widget widget, Topic topic) {
-		super(widget, topic);
+	public Widget(HelpHandler h, Topic topic) {
+		super(h, topic);
 	}
 }

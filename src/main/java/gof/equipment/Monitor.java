@@ -12,4 +12,7 @@ public class Monitor extends Equipment{
 	public double NetPrice() {
 		return super.NetPrice();
 	}
+	void Accept(EquipmentVisitor visitor) {
+		visitor.visitMonitor(this);
+	}
 }

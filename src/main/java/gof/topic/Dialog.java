@@ -1,12 +1,12 @@
 package gof.topic;
 
 public class Dialog extends Widget{
-	public Dialog(Dialog dialog, Topic topic) {
-		super(dialog, topic);
+	public Dialog(HelpHandler h, Topic topic) {
+		super(h, topic);
 	}
 	public void HandleHelp() {
 		if (this.HasHelp()) {
-			//TODO offer help
+			System.out.println("help about Dialog");
 		} else {
 			this.successor.HandleHelp();
 		}

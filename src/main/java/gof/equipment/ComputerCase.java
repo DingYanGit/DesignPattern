@@ -5,4 +5,7 @@ public class ComputerCase extends Equipment{
 		this.SetNetPrice(199);
 	}
 
+	void Accept(EquipmentVisitor visitor) {
+		visitor.visitComputerCase(this);
+	}
 }

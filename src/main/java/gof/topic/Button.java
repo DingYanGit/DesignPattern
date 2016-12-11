@@ -1,12 +1,12 @@
 package gof.topic;
 
 public class Button extends Widget{
-	public Button(Button button, Topic topic) {
-		super(button, topic);
+	public Button(HelpHandler h, Topic topic) {
+		super(h, topic);
 	}
 	public void HandleHelp() {
 		if(this.HasHelp()) {
-			//TODO offer help
+			System.out.println("help abount Button");
 		} else {
 			this.successor.HandleHelp();
 		}

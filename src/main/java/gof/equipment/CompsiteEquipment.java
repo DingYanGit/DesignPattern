@@ -15,4 +15,9 @@ public class CompsiteEquipment extends Equipment implements EquipmentContainer{
 	public void Add(Equipment equipment) {
 		this.equipments.add(equipment);
 	}
+	void Accept(EquipmentVisitor visitor) {
+		for (int i = 0; i < this.equipments.size(); i++) {
+			this.equipments.get(i).Accept(visitor);
+		}
+	}
 }

@@ -8,4 +8,5 @@ public abstract class Equipment {
 	public double NetPrice() {
 		return this.netPrice;
 	};
+	abstract void Accept(EquipmentVisitor visitor);
 }

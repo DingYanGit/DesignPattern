@@ -1,4 +1,4 @@
-package gof.Exp;
+package gof.exp;
 
 public abstract class BooleanExp {
 	public abstract BooleanExp Copy();

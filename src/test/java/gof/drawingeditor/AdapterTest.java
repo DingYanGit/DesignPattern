@@ -1,34 +1,36 @@
-package gof.window;
+package gof.drawingeditor;
+
 import static org.junit.Assert.*;
+
+import java.awt.Point;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.StandardOutputStreamLog;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
-@RunWith(SpringJUnit4ClassRunner.class)
+
 @ContextConfiguration(classes=AdapterConfig.class,loader=AnnotationConfigContextLoader.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 public class AdapterTest {
-	@Rule()
+	@Rule
 	public final StandardOutputStreamLog log = new StandardOutputStreamLog();
 	@Autowired
-	@Qualifier("iconx")
-	private IconWindow iconx;
+	protected ApplicationContext context;
 	@Autowired
-	@Qualifier("iconpm")
-	private IconWindow iconpm;	
+	protected TextShape textShape;
 	@Test
-	public void drawRecticonx() {
-		iconx.DrawRect();
-		assertEquals("deviceRect using XWindowImp", log.getLog().trim());
-	}
-	@Test
-	public void drawRecticonpm() {
-		iconpm.DrawRect();
-		assertEquals("deviceRect using PMWindowImp", log.getLog().trim());
+	public void textShape() {
+		Point bottomLeft = new Point();
+        Point topRight = new Point();
+        this.textShape.BoundingBox(bottomLeft, topRight);
+        assertTrue(bottomLeft.x == 10);
+        assertTrue(bottomLeft.y == 10);
+        assertTrue(topRight.x == 20);
+        assertTrue(topRight.y == 20);
 	}
 }

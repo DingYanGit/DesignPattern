@@ -1,4 +1,4 @@
-package gof.Exp;
+package gof.exp;
 
 public class AndExp extends BooleanExp{ 
 	private BooleanExp oprand1, oprand2;

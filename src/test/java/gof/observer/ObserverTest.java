@@ -33,7 +33,10 @@ public class ObserverTest {
 	@Test
 	public void draw() {
 		this.task.run();
-		assertEquals("draw in AnalogClock" + this.newLineMark
-				+ "draw in Digital Clock" + this.newLineMark, this.log.getLog());
+		String out1 = "draw in AnalogClock" + this.newLineMark
+				+ "draw in Digital Clock" + this.newLineMark;
+		String out2 = "draw in Digital Clock" + this.newLineMark
+				+ "draw in AnalogClock" + this.newLineMark;
+		assertTrue(out1.equals(this.log.getLog())||out2.equals(this.log.getLog()));
 	}
 }
